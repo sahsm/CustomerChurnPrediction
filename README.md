@@ -109,6 +109,13 @@ TelecomCustomerChurn/
 ```
 
 ---
+## Dataset
+
+The dataset used in this project was provided as part of the TripleTen Data Science Bootcamp and is not included in this repository.
+
+To run the notebook, place the required CSV files inside the `data/final_provider/` directory.
+
+---
 
 ## Author
 
