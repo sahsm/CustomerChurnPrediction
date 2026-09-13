@@ -29,6 +29,8 @@ The project uses four datasets containing customer information:
 
 These datasets were merged using `customerID` to create a unified dataset for analysis and model training.
 
+The dataset was provided as part of the TripleTen Data Science Bootcamp and is not included in this repository.
+
 ---
 
 ## Project Workflow
@@ -59,19 +61,15 @@ The final model was optimized using GridSearchCV with 5-fold cross-validation.
 
 ## Results
 
-The optimized **Gradient Boosting** model achieved the best overall performance.
+The optimized **Gradient Boosting** model achieved the best overall performance among the evaluated models, with an **F1-score of approximately 0.78**.
 
-Key metrics:
-
-- ROC-AUC: Best overall
-- F1-score: ~0.78
-- Strong Precision and Recall
+The model also demonstrated a strong balance between precision and recall, making it suitable for identifying customers at risk of churn while limiting unnecessary retention interventions.
 
 ---
 
 ## Key Findings
 
-The most important predictors of customer churn were:
+Feature importance analysis identified the following variables as some of the strongest predictors of churn:
 
 - TotalCharges
 - ContractDuration
@@ -79,7 +77,9 @@ The most important predictors of customer churn were:
 - Contract Type
 - Payment Method
 
-These findings suggest that customer tenure, billing information, and subscription characteristics play an important role in predicting churn.
+These results indicate that customer tenure, pricing, contract structure, and payment behavior are important signals of churn risk.
+
+From a business perspective, these factors could help guide retention strategies toward customers displaying higher-risk characteristics.
 
 ---
 
@@ -92,6 +92,31 @@ These findings suggest that customer tenure, billing information, and subscripti
 - Seaborn
 - Scikit-learn
 - Jupyter Notebook
+
+---
+
+## What I Learned
+
+This project strengthened my understanding of the complete supervised machine learning workflow, particularly:
+
+- Building classification pipelines from multiple data sources
+- Handling preprocessing and feature engineering for mixed data types
+- Comparing models using metrics beyond accuracy
+- Using cross-validation and hyperparameter tuning for model selection
+- Evaluating the trade-off between precision and recall in a business context
+- Interpreting feature importance and translating model results into actionable business insights
+
+---
+
+## Future Improvements
+
+Potential next steps for this project include:
+
+- Testing additional boosting algorithms such as XGBoost or LightGBM
+- Exploring more advanced feature engineering and feature selection techniques
+- Evaluating probability thresholds based on the business cost of false positives and false negatives
+- Adding model explainability techniques such as SHAP to better understand individual churn predictions
+- Developing a simple dashboard or application to make churn-risk predictions more accessible to business users
 
 ---
 
@@ -109,11 +134,30 @@ TelecomCustomerChurn/
 ```
 
 ---
-## Dataset
 
-The dataset used in this project was provided as part of the TripleTen Data Science Bootcamp and is not included in this repository.
+## How to Run
 
-To run the notebook, place the required CSV files inside the `data/final_provider/` directory.
+1. Clone this repository.
+
+2. Install the required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Place the required CSV files inside:
+
+```text
+data/final_provider/
+```
+
+4. Open and run:
+
+```text
+Customer_Churn_Prediction.ipynb
+```
+
+The original dataset was provided as part of the TripleTen Data Science Bootcamp and is not included in this repository.
 
 ---
 
